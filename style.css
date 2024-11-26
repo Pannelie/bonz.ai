@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg-green: #747766;
+  --main-font-color: #ffffff;
+
+  --main-font: "maven pro";
+}
+
+/*Bakgrundsbilder i body*/
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.home {
+  background-image: url(assets/photos/09-day.jpg);
+}
+
+.about {
+  background-image: url(assets/photos/05-day.jpg);
+}
+
+.booking {
+  background-image: url(assets/photos/03-day.jpg);
+}
+
+/*Navigationssektion*/
+
+.navigation {
+  background-color: var(--main-bg-green);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem 10%;
+  gap: 2rem;
+}
+
+.navigation__logo {
+  width: clamp(50px, 250px, 300px);
+  /* margin-left: 10%; */
+}
+
+.navigation__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 50%;
+}
+
+.navigation__list-item {
+  list-style-type: none;
+  font-family: var(--main-font);
+  font-weight: 500;
+  width: 200px;
+}
+
+.navigation__link {
+  display: inline-block;
+  color: var(--main-font-color);
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.8rem 0.5rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease, font-size 0.3s ease; /* Lägger till en övergångseffekt på bakgrund och font-size*/
+  width: 100%;
+}
+
+.navigation__link:hover,
+.navigation__link:focus {
+  outline: none;
+  background-color: #616452;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
