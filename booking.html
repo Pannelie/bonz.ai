@@ -31,6 +31,27 @@
           </li>
         </nav>
       </header>
-    <div class="wrapper"></div>
+    <div class="wrapper wrapper--booking">
+        <form class="check-room">
+            <h2 class="check-room__title">Hitta ett ledigt rum</h2>
+            <label class="check-room__info check-room__info--long">
+                Ankomst
+                <input type="date" class="check-room__input">
+            </label>
+            <label class="check-room__info check-room__info--long">
+                Hemgång
+                <input type="date" placeholder="Välj datum" class="check-room__input">
+            </label>
+            <label class="check-room__info">
+                Gäster
+                <input type="number" placeholder="Välj antal" class="check-room__input" min="1" max="12">
+            </label>
+            <label class="check-room__info">
+                Rum
+                <input type="number" placeholder="Välj antal" class="check-room__input" min="1" max="5">
+            </label>
+            <button class="main-btn--long main-btn">Sök</button>
+        </form>
+    </div>
   </body>
 </html>

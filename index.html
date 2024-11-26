@@ -31,25 +31,26 @@
         </li>
       </nav>
     </header>
-    <main class="wrapper">
+    <main class="wrapper wrapper--home">
         <form class="check-room">
             <h2 class="check-room__title">Hitta ett ledigt rum</h2>
-            <label class="check-room__info check-room__info-long">
+            <label class="check-room__info check-room__info--long">
                 Ankomst
-                <input type="date">
+                <input type="date" class="check-room__input">
             </label>
-            <label class="check-room__info check-room__info-long">
+            <label class="check-room__info check-room__info--long">
                 Hemgång
-                <input type="date">
+                <input type="date" placeholder="Välj datum" class="check-room__input">
             </label>
-            <label class="check-room__info check-room__info-short">
-                Antal Personer
-                <input type="number">
+            <label class="check-room__info">
+                Gäster
+                <input type="number" placeholder="Välj antal" class="check-room__input" min="1" max="12">
             </label>
-            <label class="check-room__info check-room__info-short">
-                Antal rum
-                <input type="number">
+            <label class="check-room__info">
+                Rum
+                <input type="number" placeholder="Välj antal" class="check-room__input" min="1" max="5">
             </label>
+            <button class="main-btn--long main-btn">Sök</button>
         </form>
 
         <section class="bonzai-logo"><img src="assets/logo/bonz.ai-logo-white-portrait-full.png" alt="bonzai-full-logo"></section>
