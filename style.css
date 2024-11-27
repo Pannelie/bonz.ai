@@ -101,6 +101,7 @@ body {
   display: grid;
   grid-auto-rows: auto;
   max-width: 1000px;
+  width: 100%;
   text-align: center;
   place-items: center;
   margin: 0 auto;
@@ -132,7 +133,6 @@ body {
 
 .check-room--sizing {
   grid-template-columns: repeat(8, 1fr);
-  max-width: 1000px;
 }
 
 .check-room__title {
@@ -160,9 +160,6 @@ body {
   height: 3rem;
   margin-top: 0.5rem;
   padding-left: 0.5rem;
-}
-
-.bonzai-logo {
 }
 
 .bonzai-logo > img {
@@ -215,7 +212,8 @@ body {
 }
 
 .room__image {
-  width: 450px;
+  width: 50%;
+  max-width: 450px;
   border-radius: 12px;
   flex: 1;
 }
@@ -253,12 +251,16 @@ body {
   .wrapper--home .check-room {
     order: 2;
     padding: 1.2rem 0.7rem;
-  }
-
-  .check-room--small {
+    max-width: 100%;
+    /* grid-template-columns: 1fr;
+    grid-column: 1; */
   }
 
   .check-room--sizing {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .page-title {
+    margin-bottom: 0rem;
   }
 }
