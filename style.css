@@ -50,6 +50,7 @@ body {
   justify-content: flex-start;
   padding: 1.5rem 10% 0.5rem;
   gap: 2rem;
+  width: 100%;
 }
 
 .navigation__logo {
@@ -102,16 +103,18 @@ body {
   max-width: 1000px;
   text-align: center;
   place-items: center;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .wrapper--home {
   grid-template-columns: 1fr 1fr;
-  margin: 8rem auto 0;
+  margin-top: 8rem;
 }
 
 .wrapper--booking {
   grid-template-columns: 1fr;
-  margin: 16rem auto 0;
+  margin-top: 16rem;
 }
 
 .check-room {
@@ -127,11 +130,7 @@ body {
   width: 100%;
 }
 
-.check-room--small {
-  max-width: 500px;
-}
-
-.check-room--long {
+.check-room--sizing {
   grid-template-columns: repeat(8, 1fr);
   max-width: 1000px;
 }
@@ -158,7 +157,7 @@ body {
 
 .check-room__input {
   width: 100%;
-  height: 2rem;
+  height: 3rem;
   margin-top: 0.5rem;
   padding-left: 0.5rem;
 }
@@ -182,7 +181,8 @@ body {
   transition: background-color 0.3s ease, font-size 0.3s ease; /* Lägger till en övergångseffekt på bakgrund och font-size*/
   width: 100%;
   height: 2rem;
-  line-height: 2rem; /* Vertikal centrering av text */
+  line-height: 2rem;
+  cursor: pointer;
 }
 
 .main-btn:hover,
@@ -235,19 +235,30 @@ body {
   .navigation {
     display: none;
   }
-
-  .wrapper--home {
-    grid-template-columns: 1fr;
-    place-items: center;
+  .wrapper {
+    padding: 1rem;
   }
 
+  .wrapper--home,
   .wrapper--booking {
     grid-template-columns: 1fr;
     place-items: center;
+    margin-top: 4rem;
   }
 
   .check-room {
-    order: 2;
     margin-top: 1rem;
+  }
+
+  .wrapper--home .check-room {
+    order: 2;
+    padding: 1.2rem 0.7rem;
+  }
+
+  .check-room--small {
+  }
+
+  .check-room--sizing {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
