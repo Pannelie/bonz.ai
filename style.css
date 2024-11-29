@@ -200,7 +200,7 @@ body {
   background: var(--main-font-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
-  margin: 1.5rem;
+  margin-top: 1.5rem;
   padding: 0.5rem;
 
   display: grid;
@@ -217,48 +217,42 @@ body {
 }
 
 .gallery {
-  width: 300px;
-  height: 200px;
-  position: relative;
+  /* width: 300px; */
+
+  /* position: relative; */
   margin-top: 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
 }
 
 .gallery__image {
-  position: absolute;
+  display: none;
+  /* position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
 
-  width: 30%;
-  max-width: 450px;
+  width: 100%;
+  /* max-width: 450px; */
   border-radius: 12px;
-  opacity: 0;
-
-  aspect-ratio: 1;
-  background-size: cover;
-  background-position: center;
   transition: opacity 0.3s ease;
 
-  grid-column: 1 / -1;
+  grid-column: span 3;
+  order: 1;
 }
 
-.gallery__image--1 {
+/* .gallery__image--1 {
   background-image: url(assets/photos/01-day.jpg);
-  opacity: 1;
 }
 
 .gallery__image--2 {
   background-image: url(assets/photos/03-day.jpg);
-  opacity: 1;
 }
 
 .gallery__image--3 {
   background-image: url(assets/photos/07-day.jpg);
-  opacity: 1;
-}
+} */
 
 .gallery__thumbnails {
   display: flex;
@@ -275,13 +269,16 @@ body {
 }
 
 .gallery__thumbnail {
-  width: 100px;
-  height: 100px;
-  /* background-size: cover;
-  background-position: center; */
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
+  margin-top: 0.5rem;
+  order: 2;
 }
 
 .gallery__thumb-img {
@@ -291,36 +288,41 @@ body {
   object-position: center;
 }
 
-.gallery__thumbnail-input:hover,
-.gallery__thumbnail-input:focus {
-  border-color: var(--main-btn-green);
+.gallery__thumbnail:hover,
+.gallery__thumbnail:focus {
+  filter: brightness(60%);
 }
 
 .gallery__thumbnail--label-1 {
   background-image: url(assets/photos/01-day.jpg);
+  justify-self: end;
 }
 
 .gallery__thumbnail--label-2 {
   background-image: url(assets/photos/03-day.jpg);
+  justify-self: center;
 }
 .gallery__thumbnail--label-3 {
   background-image: url(assets/photos/07-day.jpg);
+  justify-self: start;
 }
 
-#thumb-1:checked + label + .gallery .gallery__image--1 {
-  opacity: 1;
+#thumbnail-1:checked ~ .gallery__image--1 {
+  display: block;
 }
 
-#thumb-2:checked + label + .gallery .gallery__image--2 {
-  opacity: 1;
+#thumbnail-2:checked ~ .gallery__image--2 {
+  display: block;
 }
 
-#thumb-3:checked + label + .gallery .gallery__image--3 {
-  opacity: 1;
+#thumbnail-3:checked ~ .gallery__image--3 {
+  display: block;
 }
 
 .room__info-box {
-  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 @media (max-width: 576px) {
@@ -363,5 +365,10 @@ body {
 
   .page-title {
     margin-bottom: 0rem;
+  }
+
+  .room {
+    grid-template-columns: 1fr;
+    width: auto;
   }
 }
