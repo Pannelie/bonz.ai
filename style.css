@@ -11,26 +11,28 @@
 
   --main-font: "maven pro";
 }
-
-/*Bakgrundsbilder i body*/
 .page-title {
   color: var(--main-font-color);
   font-family: var(--main-font);
   margin-bottom: 3rem;
+  font-size: 2rem;
 }
 
-body {
+/*Bakgrundsbilder i body*/
+
+/* body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: overlay;
+  font-family: var(--main-font);
 }
 
 .home {
   background-image: url(assets/photos/09-day.jpg);
-}
+} */
 
 .about {
   background-image: url(assets/photos/03-day.jpg);
@@ -51,6 +53,7 @@ body {
   padding: 1.5rem 10% 0.5rem;
   gap: 2rem;
   width: 100%;
+  height: 14vh;
 }
 
 .navigation__logo {
@@ -97,26 +100,37 @@ body {
 
 /*--------- content-------*/
 
-.wrapper {
+.hero {
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay;
+  font-family: var(--main-font);
   display: grid;
   grid-auto-rows: auto;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   width: 100%;
+  height: 86vh;
   text-align: center;
   place-items: center;
-  margin: 0 auto;
-  padding: 0 2rem;
+  /* margin: 0 auto; */
+  padding: 9rem 8rem 0.5rem;
 }
 
-.wrapper--home {
+.hero--home {
   grid-template-columns: 1fr 1fr;
-  margin-top: 8rem;
+  background-image: url(assets/photos/09-day.jpg);
+  /* margin-top: 8rem; */
 }
 
 .wrapper--booking {
   grid-template-columns: 1fr;
   margin-top: 16rem;
 }
+
+/*-----------------------Section för Rumsbokning-----------------------*/
 
 .check-room {
   padding: 2rem 1rem 1.5rem;
@@ -162,9 +176,11 @@ body {
   padding-left: 0.5rem;
 }
 
-.bonzai-logo > img {
+.hero__bonzai-logo > img {
   width: 200px;
 }
+
+/*----------------------Styling för buttons-----------------*/
 
 .main-btn {
   color: var(--main-font-color);
@@ -175,7 +191,7 @@ body {
   font-size: 1rem;
   text-decoration: none;
   background-color: #9ba08e;
-  transition: background-color 0.3s ease, font-size 0.3s ease; /* Lägger till en övergångseffekt på bakgrund och font-size*/
+  transition: background-color 0.3s ease, font-size 0.3s ease; /* Lägger till en övergångseffekt på bakgrund OCH font-size*/
   width: 100%;
   height: 2rem;
   line-height: 2rem;
@@ -194,6 +210,8 @@ body {
   grid-column: 1 / -1;
   margin-top: 1rem;
 }
+
+/*------------------------------- Section för rum-------------------------------*/
 
 .room {
   border-radius: 12px;
@@ -215,6 +233,8 @@ body {
   gap: 27px 50px;
   flex-wrap: wrap; */
 }
+
+/*---------------------------------Galleri för rumsbokning-----------------------*/
 
 .gallery {
   /* width: 300px; */
@@ -319,32 +339,112 @@ body {
   display: block;
 }
 
+/*----------------------Skriftlig beskrivning av rummen------------------*/
+
 .room__info-box {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
 }
 
+.room__title {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.room__subtitle {
+  font-size: 1.1rem;
+}
+
+.room__information {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.room__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.room__list-item {
+  display: inline-block;
+  font-weight: 500;
+  list-style-type: none;
+  font-size: 0.8rem;
+}
+.room__price {
+  align-self: end;
+}
+
+/*-------------------Home-hotellets aktuella händelser----------------*/
+
+.hero__anchar {
+  margin-top: 5rem;
+  grid-column: span 2;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.hotel-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 8rem;
+}
+
+.hotel-info__about {
+  grid-column: auto / span 3;
+}
+
+.hotel-info__event {
+  grid-column: auto / span 1;
+}
+
+.hotel-info__review {
+  grid-column: auto / span 2;
+}
+
+.hotel-info__map {
+  grid-column: auto / span 1;
+}
+
+/*----------------------------Footer section--------------------------*/
+
+.page-footer {
+  width: 100%;
+  height: 100px; /*temporary*/
+  background-color: var(--main-bg-green);
+  margin-top: 8rem;
+}
+
+/*-------------------------------Mobilvy-------------------------------*/
+
 @media (max-width: 576px) {
-  body {
+  /* body {
     background-size: 400%;
     background-position: 62%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-  }
+  } */
 
   .navigation {
     display: none;
   }
-  .wrapper {
+  /* .wrapper {
     padding: 1rem;
-  }
+  } */
 
-  .wrapper--home,
+  .hero--home,
   .wrapper--booking {
     grid-template-columns: 1fr;
     place-items: center;
-    margin-top: 4rem;
+    padding: 4rem 1rem 2rem;
+    /* margin-top: 4rem; */
   }
 
   .check-room {
@@ -352,7 +452,7 @@ body {
     padding: 0.8rem 1rem;
   }
 
-  .wrapper--home .check-room {
+  .hero--home .check-room {
     order: 2;
 
     /* grid-template-columns: 1fr;

@@ -7,53 +7,119 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700&display=swap"
       rel="stylesheet"
-    /> 
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <title>Välkommen till Bonz.ai!</title>
   </head>
-  <body class="home">
+  <body>
     <header>
       <nav class="navigation">
         <img
-        class="navigation__logo"
-        src="assets/logo/bonz.ai-logo-white-landscape.png"
-        alt="Bonz.ai logotyp -startsida">
+          class="navigation__logo"
+          src="assets/logo/bonz.ai-logo-white-landscape.png"
+          alt="Bonz.ai logotyp -startsida"
+        />
         <ul class="navigation__list">
-            <li class="navigation__list-item">
-              <a href="index.html" class="navigation__link">Hem</a>
-            </li>
-            <li class="navigation__list-item">
-              <a href="booking.html" class="navigation__link">Boka rum</a>
-            </li>
-            <li class="navigation__list-item">
-              <a href="about.html" class="navigation__link">Om oss</a>
-            </li>
-          </ul>
-        </li>
+          <li class="navigation__list-item">
+            <a href="index.html" class="navigation__link">Hem</a>
+          </li>
+          <li class="navigation__list-item">
+            <a href="booking.html" class="navigation__link">Boka rum</a>
+          </li>
+          <li class="navigation__list-item">
+            <a href="about.html" class="navigation__link">Om Hotellet</a>
+          </li>
+        </ul>
       </nav>
     </header>
-    <main class="wrapper wrapper--home">
+    <main class="wrapper">
+      <section class="hero hero--home">
         <form class="check-room">
-            <h2 class="check-room__title">Hitta ett ledigt rum</h2>
-            <label class="check-room__info">
-                Ankomst
-                <input type="date" class="check-room__input">
-            </label>
-            <label class="check-room__info">
-                Hemgång
-                <input type="date" placeholder="Välj datum" class="check-room__input">
-            </label>
-            <label class="check-room__info">
-                Gäster
-                <input type="number" placeholder="Välj antal" class="check-room__input" min="1" max="12">
-            </label>
-            <label class="check-room__info">
-                Rum
-                <input type="number" placeholder="Välj antal" class="check-room__input" min="1" max="5">
-            </label>
-            <button class="main-btn--long main-btn">Sök</button>
+          <h2 class="check-room__title">Hitta ett ledigt rum</h2>
+          <label class="check-room__info">
+            Ankomst
+            <input type="date" class="check-room__input" />
+          </label>
+          <label class="check-room__info">
+            Hemgång
+            <input
+              type="date"
+              placeholder="Välj datum"
+              class="check-room__input"
+            />
+          </label>
+          <label class="check-room__info">
+            Gäster
+            <input
+              type="number"
+              placeholder="Välj antal"
+              class="check-room__input"
+              min="1"
+              max="12"
+            />
+          </label>
+          <label class="check-room__info">
+            Rum
+            <input
+              type="number"
+              placeholder="Välj antal"
+              class="check-room__input"
+              min="1"
+              max="5"
+            />
+          </label>
+          <button class="main-btn--long main-btn">Sök</button>
         </form>
 
-        <section class="bonzai-logo"><img src="assets/logo/bonz.ai-logo-white-portrait-full.png" alt="bonzai-full-logo"></section>
+        <section class="hero__bonzai-logo">
+          <img
+            src="assets/logo/bonz.ai-logo-white-portrait-full.png"
+            alt="bonzai-full-logo"
+          />
+        </section>
+        <a href="#hotel-info" class="hero__anchar"
+          >Om Bonz.ai Hotell och vad vi erbjuder just nu<i
+            class="fa-solid fa-chevron-down"
+          ></i
+        ></a>
+      </section>
+      <section id="hotel-info" class="hotel-info">
+        <section class="hotel-info__about">
+          <h2 class="hotel-info__title">Bonz.ai</h2>
+          <p class="hotel-info__paragraph">
+            Bonz.ai, en upplevelse där varje detalj är skapad med tanke på dig
+            och vår planet. Hos oss är vi måna om att varje steg är ett medvetet
+            sådant för att minimera vårt avtryck på vår planet. Detta i
+            kombination med AI gör vårt hotell unikt och till en upplevelse som
+            gör att våra nöjda gäster återkommer år efter år.
+          </p>
+        </section>
+        <article class="hotel-info__event">
+          <h2 class="hotel-info__title">Årets julbord</h2>
+        </article>
+        <article class="hotel-info__event">
+          <h2 class="hotel-info__title">Virtual Healing Event</h2>
+        </article>
+        <article class="hotel-info__event">
+          <h2 class="hotel-info__title">SPA paket</h2>
+        </article>
+        <section class="hotel-info__review">
+          <h2 class="hotel-info__title">Recensioner</h2>
+          <p class="hotel-info__review-paragraph">
+            Vi är så nöjda med vår vistelse, pånyttfödda! Kommer absolut
+            tillbaka
+          </p>
+        </section>
+        <section class="hotel-info__map">
+          <h2 class="hotel-info__title">Hitta hit</h2>
+          <figure class="hotel-info__map">BILD</figure>
+        </section>
+      </section>
     </main>
+    <footer class="page-footer"></footer>
   </body>
 </html>
