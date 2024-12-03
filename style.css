@@ -9,6 +9,8 @@
   --main-btn-green: #616452;
   --dark-green: #686b5c;
   --main-font-color: #ffffff;
+  --link-font-color: #d3d3d3;
+  --anchar-bg-color: #5d5f52;
 
   --main-font: "maven pro";
 }
@@ -383,18 +385,28 @@ body {
   align-self: end;
 }
 
-/*-------------------Home-hotellets aktuella händelser----------------*/
+/*-------------------------------Anchars-----------------------------*/
 
-.hero__anchar {
-  margin-top: 5rem;
-  grid-column: span 2;
+.anchar {
   color: white;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  text-align: center;
 }
 
+.anchar--top {
+  margin-top: 5rem;
+  grid-column: span 2;
+}
+
+.anchar--bottom {
+  background-color: var(--anchar-bg-color);
+  padding: 1rem 0 1.5rem;
+}
+
+/*-------------------Home-hotellets aktuella händelser----------------*/
 .hotel-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -432,7 +444,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: overlay;
   width: 100%;
   text-align: center;
@@ -461,7 +473,8 @@ body {
 
 .hotel-info__article--map {
   background-image: url(assets/photos/navigation.jpg);
-  background-position: center 20%;
+  background-position: center 10%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .hotel-info__article--julbord {
@@ -505,7 +518,7 @@ body {
 
 .hotel-info__paragraph--review {
   font-style: italic;
-  margin-bottom: 1rem;
+  margin: 0 2rem 1rem;
   background-color: var(--dark-green);
   display: inline-block;
   padding: 0.2rem 0.5rem;
@@ -523,13 +536,22 @@ body {
   margin-top: 1rem;
   color: white;
 
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-around; */
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: start;
+  padding: 0 1rem;
 }
 
 .link-list {
   margin: 2rem 0;
+  width: 200px;
 }
 
 .link-list__title {
@@ -542,7 +564,17 @@ body {
 
 .link-list__item {
   padding-bottom: 0.3rem;
+}
+
+.link-list__item--btn {
   cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.link-list__item--btn:hover,
+.link-list__item--btn:focus {
+  color: var(--link-font-color);
 }
 
 /*-------------------------------Mobilvy-------------------------------*/
@@ -576,10 +608,16 @@ body {
     /* margin-top: 4rem; */
   }
 
-  .hero__anchar {
+  .anchar--top {
     order: 2;
     font-size: 1rem;
+    margin-top: 2rem;
   }
+
+  .anchar--bottom {
+    font-size: 1rem;
+  }
+
   .check-room {
     margin-top: 1rem;
     padding: 0.8rem 1rem;
@@ -606,7 +644,7 @@ body {
     width: auto;
   }
   .hotel-info__title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .hotel-info__paragraph--big {
