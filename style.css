@@ -20,23 +20,28 @@
   font-size: 2rem;
   align-self: end;
   padding-bottom: 1rem;
-  margin-top: 10%;
+  margin-top: 11%;
 }
 
 body {
   background-color: var(--main-bg-green);
   font-family: var(--main-font);
+  position: relative;
 }
 
-.about {
-  background-image: url(assets/photos/03-day.jpg);
+.burger-btn {
+  display: none;
 }
-
-.booking {
-  background-image: url(assets/photos/05-day.jpg);
+.burger {
+  display: none;
 }
 
 /*----------------------------Navigation-section--------------------------*/
+
+header {
+  overflow: hidden;
+  position: relative;
+}
 
 .navigation {
   background-color: var(--main-bg-green);
@@ -136,6 +141,7 @@ body {
   background: rgba(116, 119, 102, 0.7);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
+  max-width: 1000px;
 }
 
 .check-room--sizing {
@@ -227,7 +233,7 @@ body {
   gap: 1rem;
 }
 
-/*---------------------------------Galleri för rumsbokning-----------------------*/
+/*------------------Galleri för rumsbokning-----------------*/
 
 .gallery {
   padding: 1rem;
@@ -586,6 +592,9 @@ body {
 .link-list__item {
   padding-bottom: 0.3rem;
 }
+.link-list__item--phone {
+  margin: 0.8rem 0 0rem;
+}
 
 .link-list__item--btn {
   cursor: pointer;
@@ -601,16 +610,111 @@ body {
 /*-------------------------------Mobilvy-------------------------------*/
 
 @media (max-width: 875px) {
-  .navigation {
+  /* ---------------------------Hamburger-section-------------------------- */
+
+  .burger {
     display: none;
   }
 
+  .burger-btn {
+    width: 1.5rem;
+    aspect-ratio: 1;
+    top: 1rem;
+    right: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    position: fixed;
+  }
+
+  .burger__line,
+  .burger__line::before,
+  .burger__line::after {
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-font-color);
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .burger__line::before {
+    content: "";
+    top: -8px;
+  }
+
+  .burger__line::after {
+    content: "";
+    top: 8px;
+  }
+
+  .burger:checked ~ .burger-btn .burger__line {
+    transform: rotate(45deg);
+  }
+  .burger:checked ~ .burger-btn .burger__line::before {
+    transform: rotate(0);
+    top: 0;
+  }
+  .burger:checked ~ .burger-btn .burger__line::after {
+    transform: rotate(90deg);
+    top: 0;
+  }
+
+  .navigation {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+
+    position: fixed;
+  }
+  .navigation__logo {
+    display: none;
+  }
+
+  .navigation__list {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    width: 100%;
+    padding-top: 4rem;
+  }
+
+  .navigation__list-item {
+    padding: 2rem;
+    width: 100%;
+    border-top: 1px solid var(--main-font-color);
+  }
+  .navigation__list-item:nth-child(3) {
+    border-bottom: 1px solid var(--main-font-color);
+  }
+
+  .navigation__link {
+    text-align: right;
+    padding: 0;
+    transition: background-color 0.3s ease; /* Lägger till en övergångseffekt på bakgrund och font-size*/
+  }
+
+  .navigation__list-item:hover,
+  .navigation__list-item:active {
+    background-color: var(--dark-green);
+  }
+
+  .burger:checked ~ header .navigation {
+    transform: translateX(0);
+    position: fixed;
+  }
+
   .hero {
-    height: auto;
+    height: 100vh;
+    margin-top: 0;
   }
 
   .hero--home,
-  .wrapper--booking {
+  .hero--booking {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     place-items: center;
