@@ -17,10 +17,12 @@
   </head>
   <body>
     <!-- hamburgarmeny -->
+
     <input type="checkbox" class="burger" id="burger" />
     <label for="burger" class="burger-btn">
       <span class="burger__line"></span>
     </label>
+
     <!-------------------------Navigationsbar------------------------->
     <header>
       <nav id="navigation-start" class="navigation">
@@ -97,9 +99,10 @@
         <!--------------------Anchar för hotellet akutella info------------------->
 
         <a href="#hotel-info" class="anchar anchar--top anchar--home"
-          >Om Bonz.ai Hotell och vad vi erbjuder just nu<i
-            class="fa-solid fa-chevron-down"
-          ></i
+          ><p class="anchar__visability">
+            Om Bonz.ai Hotell och vad vi erbjuder just nu
+          </p>
+          <i class="anchar__arrow fa-solid fa-chevron-down"></i
         ></a>
       </section>
 
@@ -127,7 +130,7 @@
         <article
           class="hotel-info__article hotel-info__btn hotel-info__article--julbord"
         >
-          <h3 class="hotel-info__title">Årets julbord</h3>
+          <h3 class="hotel-info__title hotel-info__title">Årets julbord</h3>
         </article>
         <article
           class="hotel-info__article hotel-info__btn hotel-info__article--virtual"
